@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - SwiftCart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8 antialiased">
+  <div class="max-w-6xl mx-auto space-y-8">
+    
+    <div class="flex justify-between items-center border-b pb-4">
+      <h1 class="text-3xl font-black text-gray-900">SwiftCart Control Panel</h1>
+      <a href="index.html" class="text-sm font-semibold text-indigo-600 hover:underline">&larr; Back to Shop</a>
+    </div>
+
+    <!-- 1. Add Product Form -->
+    <div class="bg-white p-6 rounded-xl border shadow-sm">
+      <h2 class="text-lg font-bold mb-4">Add New Catalog Product</h2>
+      <form id="addProductForm" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <input type="text" id="pTitle" required placeholder="Title (e.g. Leather Bag)" class="border rounded px-3 py-2 text-sm" />
+        <select id="pCategory" class="border rounded px-3 py-2 text-sm">
+          <option value="Apparel">Apparel</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+        <input type="number" id="pPrice" required placeholder="Price in PKR" class="border rounded px-3 py-2 text-sm" />
+        <input type="number" id="pStock" required placeholder="Initial Stock" class="border rounded px-3 py-2 text-sm" />
+        <button type="submit" class="md:col-span-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 rounded text-sm">
+          Save Product
+        </button>
+      </form>
+    </div>
+
+    <!-- 2. Orders Manager -->
+    <div class="bg-white p-6 rounded-xl border shadow-sm">
+      <h2 class="text-lg font-bold mb-4">Customer Orders</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-gray-50 border-b text-xs uppercase text-gray-500">
+            <tr>
+              <th class="py-3 px-4">Order ID</th>
+              <th class="py-3 px-4">Customer</th>
+              <th class="py-3 px-4">Address</th>
+              <th class="py-3 px-4">Total</th>
+              <th class="py-3 px-4">Items Ordered</th>
+              <th class="py-3 px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody" class="divide-y">
+            <!-- Dynamic rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
